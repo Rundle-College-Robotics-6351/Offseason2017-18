@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team6351.robot.commands.ActivateShooter;
 import org.usfirst.frc.team6351.robot.commands.InvertRobot;
 
 /**
@@ -66,7 +65,6 @@ public class OI {
 		 
 		driverLeftBumper.toggleWhenPressed(new InvertRobot());
 		
-		controllerRightTrigger.whileHeld(new ActivateShooter());
 		
 	}
 	//Method for getting an axis value on the driver joystick
