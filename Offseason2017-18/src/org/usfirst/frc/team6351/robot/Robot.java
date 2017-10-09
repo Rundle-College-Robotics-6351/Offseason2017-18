@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import org.usfirst.frc.team6351.robot.commands.FlightStickDrive;
 import org.usfirst.frc.team6351.robot.commands.GTADrive;
 import org.usfirst.frc.team6351.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team6351.robot.subsystems.LightRing;
 import org.usfirst.frc.team6351.robot.subsystems.Sensors;
 import org.usfirst.frc.team6351.robot.subsystems.SparkControllers;
 
@@ -40,7 +39,6 @@ public class Robot extends IterativeRobot {
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static final Sensors sensors = new Sensors();
 	public static final SparkControllers sparks = new SparkControllers();
-	public static final LightRing ring = new LightRing();
 	public static OI oi;
 
     Command autonomousStart;
