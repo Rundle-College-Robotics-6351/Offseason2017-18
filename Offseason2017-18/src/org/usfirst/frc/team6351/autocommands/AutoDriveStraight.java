@@ -6,8 +6,9 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * Rundle College Team 6351, 2017 Season
- * Programmed in Java by Davis Carlson and Max Gilmour
+ * Rundle College Team 6351, 2017 Off-Season
+ * Programmed in Java by Davis Carlson in 2016 and Max Gilmour in 2016
+ * Programmed by various people in 2017
  * 
  */
 
