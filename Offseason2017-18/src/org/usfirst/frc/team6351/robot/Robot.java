@@ -48,9 +48,6 @@ public class Robot extends IterativeRobot {
 	public static double centerYContour;
 	NetworkTable GRIPContourReport;
 	
-	public static boolean precisionActive;
-	public static boolean cameraDriveInverted;
-	
 //	public static UsbCamera usbCamera1;
 //	public static UsbCamera usbCamera2;
 //	public static MjpegServer mjpegServer1;
@@ -62,8 +59,6 @@ public class Robot extends IterativeRobot {
      */
 	
     public void robotInit() {
-    	precisionActive = false;
-    	cameraDriveInverted = false;
 
     	GRIPContourReport = NetworkTable.getTable("GRIP/ntPinkPaper");
 
@@ -182,7 +177,6 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run(); 
         SmartDashboard.putNumber("GyroAngle", sensors.getGyroAngle());
-        SmartDashboard.putBoolean("INVERTED!", cameraDriveInverted);
         
     }
     
