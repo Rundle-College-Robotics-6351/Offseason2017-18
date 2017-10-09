@@ -13,7 +13,6 @@ import org.usfirst.frc.team6351.robot.subsystems.BallCollector;
 import org.usfirst.frc.team6351.robot.subsystems.Climber;
 import org.usfirst.frc.team6351.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team6351.robot.subsystems.LightRing;
-import org.usfirst.frc.team6351.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team6351.robot.subsystems.Sensors;
 import org.usfirst.frc.team6351.robot.subsystems.SparkControllers;
 
@@ -41,7 +40,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final DriveTrain driveTrain = new DriveTrain();
-	public static final Pneumatics pneumatics = new Pneumatics();
 	public static final Sensors sensors = new Sensors();
 	public static final SparkControllers sparks = new SparkControllers();
 	public static final BallCollector ballintake = new BallCollector();
