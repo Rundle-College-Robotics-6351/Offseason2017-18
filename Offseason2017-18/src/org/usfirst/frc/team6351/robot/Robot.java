@@ -44,15 +44,6 @@ public class Robot extends IterativeRobot {
     SendableChooser<Command> autoMode;
     SendableChooser<Command> driveMode;
 
-	public static double centerXContour;
-	public static double centerYContour;
-	NetworkTable GRIPContourReport;
-	
-//	public static UsbCamera usbCamera1;
-//	public static UsbCamera usbCamera2;
-//	public static MjpegServer mjpegServer1;
-//	public static MjpegServer mjpegServer2;
-
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
