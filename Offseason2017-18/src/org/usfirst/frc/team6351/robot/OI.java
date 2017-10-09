@@ -4,14 +4,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
-import org.usfirst.frc.team6351.robot.commands.ActivateClimber;
-import org.usfirst.frc.team6351.robot.commands.ActivateShooter;
-import org.usfirst.frc.team6351.robot.commands.EnableCompressor;
-import org.usfirst.frc.team6351.robot.commands.ActivateBallCollector;
-import org.usfirst.frc.team6351.robot.commands.EvacuateBallCollector;
-import org.usfirst.frc.team6351.robot.commands.InvertRobot;
-import org.usfirst.frc.team6351.robot.commands.SolenoidsCommand;
-
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -69,19 +61,8 @@ public class OI {
 //		joystick11.toggleWhenPressed(new ActivateBallCollector());
 //		joystick12.toggleWhenPressed(new EvacuateBallCollector());
 //		joystick7.whileHeld(new ActivateClimber());
-		
-		controllerX.whenPressed(new SolenoidsCommand(RobotMap.Solenoid_1, true));
-		controllerY.whenPressed(new SolenoidsCommand(RobotMap.Solenoid_1, false));
-		controllerA.whenPressed(new SolenoidsCommand(RobotMap.Solenoid_2, true));
-		controllerB.whenPressed(new SolenoidsCommand(RobotMap.Solenoid_2, false));
-		driverRightBumper.toggleWhenPressed(new EnableCompressor());
 		 
-		driverLeftBumper.toggleWhenPressed(new InvertRobot());
 		
-		controllerRightTrigger.whileHeld(new ActivateShooter());
-		controllerLeftTrigger.whileHeld(new ActivateClimber());
-		controllerA.toggleWhenPressed(new ActivateBallCollector());
-		controllerB.toggleWhenPressed(new EvacuateBallCollector());
 		
 	}
 	//Method for getting an axis value on the driver joystick

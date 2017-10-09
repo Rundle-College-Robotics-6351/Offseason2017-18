@@ -36,24 +36,15 @@ public class DriveTrain extends Subsystem {
         setDefaultCommand(new FlightStickDrive());
     }
     public void setLeft (double speed) {
-    	if (Robot.cameraDriveInverted == true) {
-    		frontLeft.set(speed*-1);
-        	backLeft.set(speed*-1);
-    	} else {
     		frontLeft.set(speed);
     		backLeft.set(speed);
-    	}
+    	
 
     }
     public void setRight (double speed) {
-    	if (Robot.cameraDriveInverted == true) {
-    		frontRight.set(speed*-1);
-        	backRight.set(speed*-1);
-    	} else {
     		frontRight.set(speed);
     		backRight.set(speed);
-    	}
-    	
+    
     }
 }
 
