@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
 
 import org.usfirst.frc.team6351.robot.commands.FlightStickDrive;
 import org.usfirst.frc.team6351.robot.commands.GTADrive;
-import org.usfirst.frc.team6351.robot.subsystems.BallCollector;
 import org.usfirst.frc.team6351.robot.subsystems.Climber;
 import org.usfirst.frc.team6351.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team6351.robot.subsystems.LightRing;
@@ -42,7 +41,6 @@ public class Robot extends IterativeRobot {
 	public static final DriveTrain driveTrain = new DriveTrain();
 	public static final Sensors sensors = new Sensors();
 	public static final SparkControllers sparks = new SparkControllers();
-	public static final BallCollector ballintake = new BallCollector();
 	public static final Climber climber = new Climber();
 	public static final LightRing ring = new LightRing();
 	public static OI oi;

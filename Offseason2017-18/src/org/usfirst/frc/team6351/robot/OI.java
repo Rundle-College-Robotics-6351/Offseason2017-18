@@ -6,8 +6,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team6351.robot.commands.ActivateClimber;
 import org.usfirst.frc.team6351.robot.commands.ActivateShooter;
-import org.usfirst.frc.team6351.robot.commands.ActivateBallCollector;
-import org.usfirst.frc.team6351.robot.commands.EvacuateBallCollector;
 import org.usfirst.frc.team6351.robot.commands.InvertRobot;
 
 /**
@@ -71,8 +69,6 @@ public class OI {
 		
 		controllerRightTrigger.whileHeld(new ActivateShooter());
 		controllerLeftTrigger.whileHeld(new ActivateClimber());
-		controllerA.toggleWhenPressed(new ActivateBallCollector());
-		controllerB.toggleWhenPressed(new EvacuateBallCollector());
 		
 	}
 	//Method for getting an axis value on the driver joystick
