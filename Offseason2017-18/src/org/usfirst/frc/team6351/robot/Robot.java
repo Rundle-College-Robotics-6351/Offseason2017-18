@@ -59,45 +59,11 @@ public class Robot extends IterativeRobot {
      */
 	
     public void robotInit() {
-
-    	GRIPContourReport = NetworkTable.getTable("GRIP/ntPinkPaper");
-
-//        usbCamera1 = new UsbCamera("USB Camera 0", 0);
-//        usbCamera2 = new UsbCamera("USB Camera 1", 1);
-//
-//        usbCamera1.setResolution(RobotMap.MJPEG_WIDTH, RobotMap.MJPEG_HEIGHT);
-//        usbCamera2.setResolution(RobotMap.BACKUPMJPEG_WIDTH, RobotMap.BACKUPMJPEG_HEIGHT);
-//        usbCamera1.setFPS(30);
-//        usbCamera2.setFPS(20);
-//        mjpegServer1 = new MjpegServer("serve_USB Camera 0", 1181);
-//        mjpegServer1.setSource(usbCamera1);
-//        mjpegServer2 = new MjpegServer("Mjpeg Backup Stream", 1182);
-//        mjpegServer2.setSource(usbCamera2);
-//        MjpegServer mjpegServer2 = new MjpegServer("serve_USB Camera 1", 1182);
-//        mjpegServer2.setSource(usbCamera2);
-
-//        visionThread = new VisionThread(camera, new GRIPpinkPaper(), pipeline -> {
-//            if (!pipeline.filterContoursOutput().isEmpty()) {
-//                Rect r = Imgproc.boundingRect(pipeline.filterContoursOutput().get(0));
-//                synchronized (imgLock) {
-//                	centerXContour = r.x + (r.width / 2);
-//                }
-//            } else {
-//            	DriverStation.reportError("No Contours", false);
-//            }
-//            
-//        });
-//        visionThread.start();
-        
-
-		oi = new OI();
+    	oi = new OI();
 		
 		//Autonomous Command Selector
 		
 		autoMode = new SendableChooser<Command>();
-		//autoMode.addObject("Auto: Turn 90", new AutoTurn(90));
-		//autoMode.addObject("Auto: Follow GRIP Contour (Shape)", new AutoFollowContour());
-		//autoMode.addDefault("Auto: DO NOT MOVE", new AutoDoNotMove());
         SmartDashboard.putData("Auto mode", autoMode);
         
       //Drive Mode Command Selector
@@ -132,17 +98,6 @@ public class Robot extends IterativeRobot {
 	 */
     public void autonomousInit() {
     	autonomousStart = (Command) autoMode.getSelected();
-        
-		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
-		switch(autoSelected) {
-		case "My Auto":
-			autonomousCommand = new MyAutoCommand();
-			break;
-		case "Default Auto":
-		default:
-			autonomousCommand = new ExampleCommand();
-			break;
-		} */
     	
     	// schedule the autonomous command (example)
         if (autonomousStart != null) autonomousStart.start();
@@ -153,10 +108,6 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-
-        getGRIP();
-        //SmartDashboard.putNumber("AUTO TEXT GRIP X", Robot.centerXContour);
-        //System.out.print(Robot.centerXContour);
         SmartDashboard.putNumber("GyroAngle", sensors.getGyroAngle());
     }
 
@@ -185,40 +136,6 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
-    }
-    
-    public void getGRIP() {
-    	double[] yValue = new double[0];
-    	double[] xValue = new double[0];
-    	double[] widthValue = new double[0];
-    	
-    	int widthPos = 0;
-    	double[] dataArrayY = GRIPContourReport.getNumberArray("centerY", yValue);
-    	double[] dataArrayX = GRIPContourReport.getNumberArray("centerX", xValue);
-    	double[] dataArrayWidth = GRIPContourReport.getNumberArray("width", widthValue);
-    	//System.out.print(dataArrayX.length);
-    	for(int i = 0; i < dataArrayWidth.length; i++){
-    		if(dataArrayWidth[i] > dataArrayWidth[widthPos]){
-    			widthPos = i;
-    		}
-    	}
-    	//single double
-        if (dataArrayY.length > widthPos) {	
-    		centerYContour = dataArrayY[widthPos];
-        }
-    	//single double
-        if (dataArrayX.length > widthPos){
-        	centerXContour = dataArrayX[widthPos];
-        }
-        if (dataArrayX.length == 0) {
-        	centerXContour = 0.0;
-        }
-        //System.out.print(Robot.centerXContour);
-		//Showing the value of centerY on the smart dashboard
-		//SmartDashboard.putNumber("The value of centerY is ", Robot.centerYContour);
-		
-		//Showing the value of centerX on the smart dashboard
-		//SmartDashboard.putNumber("The value of centerX is ", Robot.centerXContour);
     }
 
 }
