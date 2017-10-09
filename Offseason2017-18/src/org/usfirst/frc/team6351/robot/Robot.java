@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 
+import org.usfirst.frc.team6351.autocommands.AutoDriveStraight;
 import org.usfirst.frc.team6351.robot.commands.FlightStickDrive;
 import org.usfirst.frc.team6351.robot.commands.GTADrive;
 import org.usfirst.frc.team6351.robot.subsystems.DriveTrain;
@@ -55,6 +56,10 @@ public class Robot extends IterativeRobot {
 		//Autonomous Command Selector
 		
 		autoMode = new SendableChooser<Command>();
+		
+		// The robot will drive straight at <percent in decimal form> of its max speed for <seconds>
+		autoMode.addObject("AUTO: Drive Straight", new AutoDriveStraight(0.2, 1));
+		
         SmartDashboard.putData("Auto mode", autoMode);
         
       //Drive Mode Command Selector
