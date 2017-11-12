@@ -10,7 +10,6 @@ import org.usfirst.frc.team6351.autocommands.AutoDriveStraight;
 import org.usfirst.frc.team6351.robot.commands.FlightStickDrive;
 import org.usfirst.frc.team6351.robot.commands.GTADrive;
 import org.usfirst.frc.team6351.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team6351.robot.subsystems.Sensors;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -37,7 +36,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final DriveTrain driveTrain = new DriveTrain();
-	public static final Sensors sensors = new Sensors();
+//	public static final Sensors sensors = new Sensors();
 	public static OI oi;
 
     Command autonomousStart;
@@ -104,7 +103,7 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putNumber("GyroAngle", sensors.getGyroAngle());
+//        SmartDashboard.putNumber("GyroAngle", sensors.getGyroAngle());
     }
 
     public void teleopInit() {
@@ -123,7 +122,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run(); 
-        SmartDashboard.putNumber("GyroAngle", sensors.getGyroAngle());
+//        SmartDashboard.putNumber("GyroAngle", sensors.getGyroAngle());
         
     }
     

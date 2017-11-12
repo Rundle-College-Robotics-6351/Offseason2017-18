@@ -27,7 +27,7 @@ public class RobotMap {
 	public static final double Drive_Scaling_Auto = 0.6;
 	public static final double Tank_Drive_Precision_Scaling_Teleop = 0.2;
 	
-	public static final double GTA_Drive_Scaling_Teleop = 0.6;
+	public static final double GTA_Drive_Scaling_Teleop = 0.5;
 	public static final double GTA_Drive_Precision_Scaling_Teleop = 0.2;
 	
 	public static final int Motor_Front_Left = 1;
